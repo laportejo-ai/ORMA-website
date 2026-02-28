@@ -68,13 +68,13 @@ body.dark-page nav.scrolled {
   text-decoration: none;
 }
 
-.logo-square {
-  width: 24px; 
-  height: 24px;
-  border: 3px solid var(--klein);
-  transform: rotate(45deg);
-  transition: border-color 0.3s;
+/* Logo image PNG */
+.nav-logo-img {
+  height: 28px;        /* Ajuste la hauteur */
+  width: auto;         /* Largeur automatique (garde proportions) */
+  margin-right: 12px;  /* Espace entre logo et texte */
 }
+
 
 body.dark-page .logo-square {
   border-color: var(--white);
@@ -148,7 +148,7 @@ body.dark-page .nav-links a {
 .btn {
   display: inline-block;
   padding: 16px 40px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;

@@ -25,11 +25,20 @@
       z-index: 1;
     }
 
+    .welcome-bg video,
     .welcome-bg img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.65;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .welcome-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .welcome-overlay {
@@ -47,10 +56,9 @@
     }
 
     .welcome-logo {
-      width: 80px;
-      height: 80px;
+      width: 60%;
+      height: auto;
       margin-bottom: 40px;
-      opacity: 0;
       animation: fadeInUp 1.2s ease forwards;
     }
 
@@ -66,7 +74,7 @@
     }
 
     .welcome-tagline {
-      font-family: var(--font-serif);
+      font-family: var(--font-sans);
       font-size: clamp(19px, 2.2vw, 26px);
       font-weight: 400;
       line-height: 1.8;
@@ -136,8 +144,7 @@
 
   <nav id="nav">
     <a href="index.html" class="nav-logo">
-      <div class="logo-square"></div>
-      <span class="logo-text">ORMA</span>
+      <img src="images/LOGO_orma.png" alt="ORMA" class="nav-logo-img" />
     </a>
 
         <ul class="nav-links">
@@ -150,31 +157,25 @@
 
   <section id="welcome">
     <div class="welcome-bg">
-      <img src="images/welcome-bg.jpg" alt="Garden aerial view" />
+      <video autoplay muted loop playsinline class="welcome-video">
+        <source src="images/background_video.mp4" type="video/mp4">
+        <!-- Fallback image si vidéo ne charge pas -->
+        <img src="images/welcome-bg.jpg" alt="Garden" />
+      </video>
     </div>
     
     <div class="welcome-overlay"></div>
 
     <div class="welcome-content">
-      <svg class="welcome-logo" viewBox="0 0 100 100" fill="none">
-        <path d="M50,15 C35,15 20,28 18,43 C17,48 18,54 22,58 C20,63 17,68 12,71 C8,73 5,77 5,82 C5,86 8,90 13,90 C19,90 26,87 32,82 C36,84 41,85 46,85 C54,85 61,82 66,78 C71,82 77,85 82,85 C87,85 92,82 92,77 C92,73 89,69 85,67 C81,65 78,62 76,58 C80,54 82,49 82,43 C82,28 69,15 54,15 C52,15 51,15 50,15 Z" 
-              fill="white" opacity="0.9"/>
-      </svg>
-
-      <h1 class="welcome-title">ORMA</h1>
-
+      <img src="images/LOGO_orma.png" alt="ORMA" class="welcome-logo" />
+ 
       <p class="welcome-tagline">
-        Test pour voir si ca fonctionne In a world where people lose themselves in noise, speed and performance, 
+        In a world where people lose themselves in noise, speed and performance, 
         ORMA creates spaces of truth — gardens that reconnect people with their 
         inner compass, through beauty, stillness and living nature.
       </p>
 
-      <p class="welcome-note">
-        Vidéo background pas intrusive<br>
-        mais qui donne une ambiance
-      </p>
-
-      <a href="about.html" class="btn btn-primary welcome-cta">Discover our approach →</a>
+      <a href="approach.html".html" class="btn btn-primary welcome-cta">Discover our approach →</a>
     </div>
 
     <div class="scroll-indicator">
