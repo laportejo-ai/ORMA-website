@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inner Garden — ORMA</title>
+  <link rel="stylesheet" href="https://use.typekit.net/rhw2hbf.css">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* HERO */
+    .inner-hero {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--cream);
+      padding: 140px 60px 80px;
+      text-align: center;
+    }
+
+    .inner-hero-content {
+      max-width: 800px;
+    }
+
+    .inner-logo {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 40px;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .inner-title {
+      font-family: var(--font-serif);
+      font-size: clamp(48px, 6vw, 72px);
+      font-weight: 400;
+      color: var(--black);
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fadeInUp 1s 0.2s ease forwards;
+    }
+
+    .inner-hook {
+      font-family: var(--font-serif);
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--grey);
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeInUp 1s 0.4s ease forwards;
+    }
+
+    .scroll-hint {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--grey);
+      opacity: 0;
+      animation: fadeIn 1s 0.8s ease forwards;
+    }
+
+    /* PHILOSOPHY */
+    #inner-philosophy {
+      padding: 100px 60px;
+      background: var(--white);
+    }
+
+    .philosophy-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .philosophy-title {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--klein);
+      margin-bottom: 32px;
+    }
+
+    .philosophy-text {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: #3A3A3A;
+      margin-bottom: 24px;
+    }
+
+    .philosophy-text strong {
+      font-weight: 500;
+      color: var(--black);
+    }
+
+    /* PROCESS TIMELINE */
+    #inner-process {
+      padding: 100px 60px;
+      background: var(--cream);
+    }
+
+    .process-intro {
+      max-width: 800px;
+      margin: 0 auto 80px;
+      text-align: center;
+    }
+
+    .process-timeline {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .process-phase {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 60px;
+      margin-bottom: 80px;
+      align-items: start;
+    }
+
+    .phase-number {
+      font-family: var(--font-serif);
+      font-size: 80px;
+      font-weight: 400;
+      color: var(--klein);
+      line-height: 1;
+      opacity: 0.15;
+    }
+
+    .phase-content {}
+
+    .phase-title {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 3vw, 38px);
+      font-weight: 400;
+      color: var(--black);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .phase-meta {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--grey);
+      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+    }
+
+    .phase-desc {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: #4A4A4A;
+      margin-bottom: 20px;
+    }
+
+    .phase-sessions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .session-item {
+      padding: 16px 20px;
+      background: white;
+      border-left: 3px solid var(--klein);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--black);
+    }
+
+    .session-item span {
+      font-weight: 300;
+      color: var(--grey);
+      font-size: 13px;
+      display: block;
+      margin-top: 4px;
+    }
+
+    /* DELIVERABLES */
+    #inner-deliverables {
+      padding: 100px 60px;
+      background: var(--white);
+    }
+
+    .deliverables-intro {
+      max-width: 700px;
+      margin: 0 auto 60px;
+      text-align: center;
+    }
+
+    .deliverables-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .deliverable-item {
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--light-grey);
+    }
+
+    .deliverable-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .deliverable-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .deliverable-label {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: rgba(255,255,255,0.9);
+      padding: 8px 14px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* FORMATS COMPARISON */
+    #inner-formats {
+      padding: 100px 60px;
+      background: var(--cream);
+    }
+
+    .formats-intro {
+      max-width: 700px;
+      margin: 0 auto 60px;
+      text-align: center;
+    }
+
+    .formats-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .format-card {
+      background: white;
+      padding: 48px;
+      border-top: 4px solid var(--klein);
+    }
+
+    .format-name {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+
+    .format-tagline {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--grey);
+      margin-bottom: 32px;
+      font-style: italic;
+    }
+
+    .format-desc {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: #4A4A4A;
+      margin-bottom: 32px;
+    }
+
+    .format-includes {
+      margin-bottom: 32px;
+    }
+
+    .format-includes-title {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+
+    .format-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .format-list li {
+      font-size: 14px;
+      font-weight: 300;
+      color: #4A4A4A;
+      padding: 8px 0;
+      padding-left: 24px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .format-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--klein);
+      font-weight: 600;
+    }
+
+    .format-best {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--klein);
+      background: rgba(0,47,167,0.05);
+      padding: 16px;
+      margin-bottom: 32px;
+      border-left: 3px solid var(--klein);
+    }
+
+    /* PRICING */
+    #inner-pricing {
+      padding: 80px 60px;
+      background: var(--black);
+      text-align: center;
+    }
+
+    .pricing-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .pricing-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 20px;
+    }
+
+    .pricing-amount {
+      font-family: var(--font-serif);
+      font-size: 48px;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .pricing-note {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .process-phase {
+        grid-template-columns: 80px 1fr;
+        gap: 40px;
+      }
+
+      .phase-number {
+        font-size: 60px;
+      }
+
+      .formats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .inner-hero,
+      #inner-philosophy,
+      #inner-process,
+      #inner-deliverables,
+      #inner-formats,
+      #inner-pricing {
+        padding: 80px 32px;
+      }
+
+      .process-phase {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .phase-number {
+        font-size: 48px;
+      }
+
+      .format-card {
+        padding: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-square"></div>
+      <span class="logo-text">ORMA</span>
+    </a>
+
+        <ul class="nav-links">
+      <li><a href="masha.html">Masha</a></li>
+      <li><a href="approach.html">Our Approach</a></li>
+      <li><a href="works.html">Works</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="inner-hero">
+    <div class="inner-hero-content">
+      <img src="images/LOGO_inner_garden.png" alt="Inner Garden" class="inner-logo" />
+      <h1 class="inner-title">Inner Garden</h1>
+      <p class="inner-hook">
+        "For those who seek a garden that reflects not just taste, but self."
+      </p>
+      <p class="scroll-hint">↓ Explore the process</p>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section id="inner-philosophy">
+    <div class="philosophy-content">
+      <p class="philosophy-title reveal">Why Different</p>
+      
+      <p class="philosophy-text reveal reveal-d1">
+        Most garden designers start with <strong>style</strong>. 
+        We start with <strong>you</strong>.
+      </p>
+
+      <p class="philosophy-text reveal reveal-d2">
+        Through a process inspired by depth psychology and fine art curation, 
+        we translate your inner world into living form. The garden becomes a space 
+        where beauty, memory, and aspiration converge — not decoration, but truth.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROCESS TIMELINE -->
+  <section id="inner-process">
+    <div class="process-intro">
+      <p class="section-label reveal">The Journey</p>
+      <h2 class="section-title reveal reveal-d1">
+        How we create<br>
+        <em>your</em> Inner Garden
+      </h2>
+      <p class="philosophy-text reveal reveal-d2">
+        A clear, gentle process from the first conversation to the last planted stem — and beyond.
+      </p>
+    </div>
+
+    <div class="process-timeline">
+      
+      <!-- PHASE 1 -->
+      <div class="process-phase reveal">
+        <div class="phase-number">01</div>
+        <div class="phase-content">
+          <h3 class="phase-title">Inner Garden Exploration</h3>
+          <p class="phase-meta">2 sessions · On site · 60-90 min each</p>
+          <p class="phase-desc">
+            We begin with deep listening. Not just about plants or styles, but about 
+            who you are, how you move through space, what brings you peace. Through 
+            creative exercises and careful observation, we uncover the key elements 
+            that will guide your garden's creation.
+          </p>
+          <div class="phase-sessions">
+            <div class="session-item">
+              <strong>Meanings & Aesthetics</strong>
+              <span>Understanding your inner garden, sense of beauty, memories</span>
+            </div>
+            <div class="session-item">
+              <strong>Place & Function</strong>
+              <span>Site analysis, light, views, daily routines, practical needs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 2 -->
+      <div class="process-phase reveal">
+        <div class="phase-number">02</div>
+        <div class="phase-content">
+          <h3 class="phase-title">Concept</h3>
+          <p class="phase-meta">3 sessions · Online · 30-60 min each</p>
+          <p class="phase-desc">
+            Here the garden takes shape. Through iterative refinement — moodboards, 
+            plant palettes, layout sketches — we move from feeling to form. 
+            You receive materials in advance, we discuss together, adjust, and evolve 
+            until the vision feels unmistakably yours.
+          </p>
+          <div class="phase-sessions">
+            <div class="session-item">
+              <strong>Style & Stem Selection</strong>
+              <span>Mood directions, plant families, overall aesthetic</span>
+            </div>
+            <div class="session-item">
+              <strong>Layout Lab</strong>
+              <span>Spatial organization, paths, zones, iterative adjustments</span>
+            </div>
+            <div class="session-item">
+              <strong>Master Garden Design</strong>
+              <span>Complete design package ready for implementation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 3 -->
+      <div class="process-phase reveal">
+        <div class="phase-number">03</div>
+        <div class="phase-content">
+          <h3 class="phase-title">Construction & Planting</h3>
+          <p class="phase-meta">Variable duration · On site supervision</p>
+          <p class="phase-desc">
+            Your garden moves from drawings into reality. I coordinate with artisans, 
+            supervise material orders, and am present on site for key moments — 
+            especially plant placement, where every decision matters. The construction 
+            unfolds with precision, respect for the original vision, and space for 
+            intuitive adjustments.
+          </p>
+        </div>
+      </div>
+
+      <!-- PHASE 4 -->
+      <div class="process-phase reveal">
+        <div class="phase-number">04</div>
+        <div class="phase-content">
+          <h3 class="phase-title">Growing with Your Garden</h3>
+          <p class="phase-meta">1-3 years · Ongoing support</p>
+          <p class="phase-desc">
+            A garden is not static. During the first year, I stay in close contact 
+            through photos and visits, observing how plants settle, making gentle 
+            adjustments where needed. Around the one-year mark, a full check-up visit 
+            with written notes for the next phase of growth. Your garden — and you — 
+            continue to evolve together.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DELIVERABLES -->
+  <section id="inner-deliverables">
+    <div class="deliverables-intro">
+      <p class="section-label reveal">What You Receive</p>
+      <h2 class="section-title reveal reveal-d1">
+        Plans, palettes,<br>
+        <em>living compositions.</em>
+      </h2>
+    </div>
+
+    <div class="deliverables-grid">
+      <div class="deliverable-item reveal">
+        <img src="images/inner-plan1.jpg" alt="Master plan" />
+        <span class="deliverable-label">Master Plan</span>
+      </div>
+      <div class="deliverable-item reveal reveal-d1">
+        <img src="images/inner-palette.jpg" alt="Plant palette" />
+        <span class="deliverable-label">Plant Palette</span>
+      </div>
+      <div class="deliverable-item reveal reveal-d2">
+        <img src="images/inner-doc.jpg" alt="Planting plan" />
+        <span class="deliverable-label">Planting Plan</span>
+      </div>
+      <div class="deliverable-item reveal reveal-d1">
+        <img src="images/inner-render.jpg" alt="3D visualization" />
+        <span class="deliverable-label">3D Visualization</span>
+      </div>
+      <div class="deliverable-item reveal reveal-d2">
+        <img src="images/inner-textures.jpg" alt="Materials" />
+        <span class="deliverable-label">Materials Selection</span>
+      </div>
+      <div class="deliverable-item reveal reveal-d3">
+        <img src="images/inner-chantier.jpg" alt="Construction photos" />
+        <span class="deliverable-label">Construction Follow-up</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMATS -->
+  <section id="inner-formats">
+    <div class="formats-intro">
+      <p class="section-label reveal">Two Formats</p>
+      <h2 class="section-title reveal reveal-d1">
+        Choose your<br>
+        <em>level of support.</em>
+      </h2>
+    </div>
+
+    <div class="formats-grid">
+      
+      <!-- SKETCH & GROW -->
+      <div class="format-card reveal">
+        <h3 class="format-name">Sketch & Grow</h3>
+        <p class="format-tagline">design + 1 visit</p>
+        
+        <p class="format-desc">
+          For those who dream of creating their own garden with their own hands. 
+          I'll design a clear vision and provide essential guidance, so you can 
+          move toward your dream with confidence.
+        </p>
+
+        <div class="format-includes">
+          <p class="format-includes-title">What's Included</p>
+          <ul class="format-list">
+            <li>Complete Inner Garden design process</li>
+            <li>Garden plan + planting plan</li>
+            <li>1 hand-drawn visual</li>
+            <li>Plant palette & care guide</li>
+            <li>Materials references</li>
+            <li>1 check-up visit during next blooming season</li>
+          </ul>
+        </div>
+
+        <div class="format-best">
+          <strong>Best for you if:</strong> you enjoy being hands-on, want professional design 
+          and guidance, but prefer to implement yourself.
+        </div>
+
+        <a href="contact.html" class="btn btn-secondary">Inquire →</a>
+      </div>
+
+      <!-- TAILORED DREAM -->
+      <div class="format-card reveal reveal-d1">
+        <h3 class="format-name">Tailored Dream</h3>
+        <p class="format-tagline">design + full coordination</p>
+        
+        <p class="format-desc">
+          Entrust the entire journey to a professional team. From first ideas to 
+          full implementation, I lead the project with meticulous attention, staying 
+          in touch for years to ensure nothing escapes our care.
+        </p>
+
+        <div class="format-includes">
+          <p class="format-includes-title">What's Included</p>
+          <ul class="format-list">
+            <li>Everything in Sketch & Grow, plus:</li>
+            <li>2 hand-drawn visuals + bloom calendar</li>
+            <li>Full materials selection & lighting plan</li>
+            <li>Gardener & supplier coordination</li>
+            <li>5+ construction supervision visits</li>
+            <li>Plant placement on-site</li>
+            <li>3-year growing watch with adjustments</li>
+          </ul>
+        </div>
+
+        <div class="format-best">
+          <strong>Best for you if:</strong> you want a high-end garden with minimal effort, 
+          value long-term supervision and peace of mind.
+        </div>
+
+        <a href="contact.html" class="btn btn-primary">Inquire →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="inner-pricing">
+    <div class="pricing-content">
+      <p class="pricing-label reveal">Investment</p>
+      <p class="pricing-amount reveal reveal-d1">Sur devis</p>
+      <p class="pricing-note reveal reveal-d2">
+        Each project is bespoke. Investment varies depending on site size, complexity, 
+        and chosen format. We work with a limited number of clients per year to ensure 
+        singular attention to every garden.
+      </p>
+      <a href="contact.html" class="btn btn-primary reveal reveal-d3">Begin the conversation →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">
+      <div class="footer-square"></div>
+      <span class="footer-text">ORMA</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="masha.html">Masha</a></li>
+      <li><a href="approach.html">Our Approach</a></li>
+      <li><a href="works.html">Works</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 ORMA. Garden Design.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

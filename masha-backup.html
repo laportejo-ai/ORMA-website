@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masha Aftaeva — ORMA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    #masha {
+      padding: 140px 60px 100px;
+    }
+
+    .masha-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      max-width: 1400px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .masha-left {
+      position: sticky;
+      top: 140px;
+    }
+
+    .masha-portrait {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+
+    .masha-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .portrait-caption {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--grey);
+      text-align: center;
+      font-style: italic;
+    }
+
+    .masha-right {}
+
+    .bio-section {
+      margin-bottom: 60px;
+    }
+
+    .bio-title {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--klein);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+    }
+
+    .bio-text {
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: #3A3A3A;
+      margin-bottom: 24px;
+    }
+
+    .bio-text strong {
+      font-weight: 500;
+      color: var(--black);
+    }
+
+    .bio-text em {
+      font-style: italic;
+      color: var(--klein);
+    }
+
+    /* Signature section */
+    .signature-section {
+      padding: 48px;
+      background: var(--cream);
+      border-left: 3px solid var(--klein);
+      margin: 60px 0;
+    }
+
+    .signature-quote {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--black);
+      margin-bottom: 20px;
+    }
+
+    .signature-author {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--grey);
+      letter-spacing: 0.05em;
+    }
+
+    /* Credentials */
+    .credentials {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .credential-item {}
+
+    .credential-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 12px;
+    }
+
+    .credential-value {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    /* CTA section */
+    .cta-section {
+      margin-top: 80px;
+      padding-top: 60px;
+      border-top: 1px solid var(--light-grey);
+      text-align: center;
+    }
+
+    .cta-text {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--grey);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 1024px) {
+      .masha-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .masha-left {
+        position: static;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .credentials {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #masha { padding: 100px 32px 80px; }
+      
+      .signature-section {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-square"></div>
+      <span class="logo-text">ORMA</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="masha.html" class="active">Masha</a></li>
+      <li><a href="approach.html">Our Approach</a></li>
+      <li><a href="works.html">Works</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="masha">
+    <div class="masha-grid">
+      
+      <!-- LEFT: Portrait -->
+      <div class="masha-left">
+        <div class="masha-portrait reveal">
+          <img src="images/masha-portrait.jpg" alt="Masha Aftaeva" />
+        </div>
+        <p class="portrait-caption reveal">Masha Aftaeva, Founder</p>
+      </div>
+
+      <!-- RIGHT: Bio -->
+      <div class="masha-right">
+        <p class="section-label reveal">Founder</p>
+        <h1 class="section-title reveal reveal-d1">
+          Masha <em>Aftaeva</em>
+        </h1>
+
+        <!-- Bio Section 1 -->
+        <div class="bio-section reveal reveal-d2">
+          <p class="bio-text">
+            <strong>Masha Aftaeva</strong> is a garden designer and the founder of ORMA. 
+            With a dual background in fine arts and horticulture, she approaches gardens 
+            as spaces of meaning — at the intersection of living matter, intimacy, and beauty.
+          </p>
+          <p class="bio-text">
+            <!-- PLACEHOLDER: À remplacer par la vraie bio -->
+            Born in [Ville], trained at [École], she worked in [contexte] before founding ORMA in [année]. 
+            Her signature: rare listening, uncompromising aesthetic rigor, and the conviction that 
+            every garden must tell something true about the person who inhabits it.
+          </p>
+        </div>
+
+        <!-- Signature quote -->
+        <div class="signature-section reveal reveal-d3">
+          <p class="signature-quote">
+            "Most designers ask what you want. I ask who you are."
+          </p>
+          <p class="signature-author">— Masha Aftaeva</p>
+        </div>
+
+        <!-- Bio Section 2 -->
+        <div class="bio-section reveal reveal-d3">
+          <p class="bio-title">Approach</p>
+          <p class="bio-text">
+            <!-- PLACEHOLDER: À personnaliser -->
+            Masha's method blends depth psychology with artistic curation. 
+            Each project begins with extended conversations — not just about preferences, 
+            but about rhythms, memories, aspirations. The garden emerges as a translation 
+            of this inner landscape into living form.
+          </p>
+          <p class="bio-text">
+            Her work has been featured in [publications] and has received [awards]. 
+            She lectures on garden design as a form of <em>emotional architecture</em>.
+          </p>
+        </div>
+
+        <!-- Credentials -->
+        <div class="credentials reveal reveal-d4">
+          <div class="credential-item">
+            <p class="credential-label">Experience</p>
+            <p class="credential-value">
+              <!-- PLACEHOLDER -->
+              8+ years in private garden design<br>
+              Former [position] at [company/studio]
+            </p>
+          </div>
+
+          <div class="credential-item">
+            <p class="credential-label">Education</p>
+            <p class="credential-value">
+              <!-- PLACEHOLDER -->
+              MA in Landscape Architecture, [École]<br>
+              BA in Fine Arts, [Université]
+            </p>
+          </div>
+
+          <div class="credential-item">
+            <p class="credential-label">Recognition</p>
+            <p class="credential-value">
+              <!-- PLACEHOLDER -->
+              [Award Name], 20XX<br>
+              Featured in [Publication]
+            </p>
+          </div>
+
+          <div class="credential-item">
+            <p class="credential-label">Philosophy</p>
+            <p class="credential-value">
+              Gardens as living art, depth psychology meets horticulture, seasonal beauty
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section reveal reveal-d4">
+          <p class="cta-text">
+            Interested in working with Masha?
+          </p>
+          <a href="approach.html" class="btn btn-primary">Explore our approach →</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">
+      <div class="footer-square"></div>
+      <span class="footer-text">ORMA</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="masha.html">Masha</a></li>
+      <li><a href="approach.html">Our Approach</a></li>
+      <li><a href="works.html">Works</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 ORMA. Garden Design.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

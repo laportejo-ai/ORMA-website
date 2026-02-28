@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ORMA — Garden Design</title>
+  <link rel="stylesheet" href="https://use.typekit.net/rhw2hbf.css">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body { background: #0A0A0A; }
+    
+    #welcome {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .welcome-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .welcome-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.65;
+    }
+
+    .welcome-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.6) 100%);
+      z-index: 2;
+    }
+
+    .welcome-content {
+      position: relative;
+      z-index: 3;
+      padding: 0 60px;
+      max-width: 1000px;
+    }
+
+    .welcome-logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeInUp 1.2s ease forwards;
+    }
+
+    .welcome-title {
+      font-family: var(--font-sans);
+      font-size: clamp(60px, 8vw, 110px);
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      color: white;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeInUp 1.2s 0.2s ease forwards;
+    }
+
+    .welcome-tagline {
+      font-family: var(--font-serif);
+      font-size: clamp(19px, 2.2vw, 26px);
+      font-weight: 400;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.85);
+      max-width: 720px;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeInUp 1.2s 0.4s ease forwards;
+    }
+
+    .welcome-note {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.4);
+      font-style: italic;
+      opacity: 0;
+      animation: fadeInUp 1.2s 0.6s ease forwards;
+      margin-bottom: 48px;
+    }
+
+    .welcome-cta {
+      opacity: 0;
+      animation: fadeInUp 1.2s 0.8s ease forwards;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 50px;
+      left: 60px;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      opacity: 0;
+      animation: fadeIn 1s 1.2s ease forwards;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    .scroll-text {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    @media (max-width: 768px) {
+      .welcome-content { padding: 0 24px; }
+      .welcome-title { font-size: 48px; }
+      .scroll-indicator { left: 24px; }
+    }
+  </style>
+</head>
+<body class="dark-page">
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-square"></div>
+      <span class="logo-text">ORMA</span>
+    </a>
+
+        <ul class="nav-links">
+      <li><a href="masha.html">Masha</a></li>
+      <li><a href="approach.html">Our Approach</a></li>
+      <li><a href="works.html">Works</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="welcome">
+    <div class="welcome-bg">
+      <img src="images/welcome-bg.jpg" alt="Garden aerial view" />
+    </div>
+    
+    <div class="welcome-overlay"></div>
+
+    <div class="welcome-content">
+      <svg class="welcome-logo" viewBox="0 0 100 100" fill="none">
+        <path d="M50,15 C35,15 20,28 18,43 C17,48 18,54 22,58 C20,63 17,68 12,71 C8,73 5,77 5,82 C5,86 8,90 13,90 C19,90 26,87 32,82 C36,84 41,85 46,85 C54,85 61,82 66,78 C71,82 77,85 82,85 C87,85 92,82 92,77 C92,73 89,69 85,67 C81,65 78,62 76,58 C80,54 82,49 82,43 C82,28 69,15 54,15 C52,15 51,15 50,15 Z" 
+              fill="white" opacity="0.9"/>
+      </svg>
+
+      <h1 class="welcome-title">ORMA</h1>
+
+      <p class="welcome-tagline">
+        In a world where people lose themselves in noise, speed and performance, 
+        ORMA creates spaces of truth — gardens that reconnect people with their 
+        inner compass, through beauty, stillness and living nature.
+      </p>
+
+      <p class="welcome-note">
+        Vidéo background pas intrusive<br>
+        mais qui donne une ambiance
+      </p>
+
+      <a href="about.html" class="btn btn-primary welcome-cta">Discover our approach →</a>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span class="scroll-text">Explore</span>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
