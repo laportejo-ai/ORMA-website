@@ -6,7 +6,7 @@ adobe_fonts = '<link rel="stylesheet" href="https://use.typekit.net/rhw2hbf.css"
 
 # Standard navigation
 standard_nav = '''    <ul class="nav-links">
-      <li><a href="masha.html">Masha</a></li>
+      <li><a href="about_us.html">About us</a></li>
       <li><a href="approach.html">Our Approach</a></li>
       <li><a href="works.html">Works</a></li>
       <li><a href="contact.html">Contact</a></li>

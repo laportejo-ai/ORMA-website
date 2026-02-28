@@ -8,66 +8,56 @@
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    /* Philosophy section */
-    #philosophy {
-      padding: 140px 60px 30px;
-      background: #F5F4F0;
+    #approach {
+      padding: 140px 60px 80px;
     }
 
-    .philosophy-content {
-      max-width: 800px;
-      margin: 0 auto;
+    /* Philosophy section */
+    .philosophy-section {
+      max-width: 900px;
+      margin: 0 auto 120px;
       text-align: center;
     }
 
-    .section-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--grey);
-      margin-bottom: 32px;
-    }
-
-    .philosophy-title {
-      font-family: var(--font-sans);
-      font-size: clamp(30px, 5vw, 64px);
-      font-weight: 400;
-      line-height: 1.2;
-      margin-bottom: 48px;
-    }
-
-    .philosophy-title em {
-      font-style: italic;
-      color: var(--klein);
-    }
+  .philosophy-quote {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-style: italic;
+    color: var(--grey);
+    text-align: center;
+    margin: 40px 0;
+  }
 
     .philosophy-text {
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 300;
       line-height: 1.9;
       color: #3A3A3A;
       margin-bottom: 28px;
     }
 
+    .philosophy-text strong {
+      font-weight: 500;
+      color: var(--black);
+    }
+
+    .philosophy-text em {
+      font-style: italic;
+      color: var(--klein);
+    }
+
     .philosophy-quote {
       font-family: var(--font-serif);
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 400;
       font-style: italic;
-      line-height: 1.6;
+      line-height: 1.5;
       color: var(--grey);
-      margin: 30px 0 30px 0;
-      border: none;
-      quotes: """ """;
+      margin: 60px auto;
+      max-width: 700px;
     }
 
-    /* Offerings section */
-    #offerings {
-      padding: 100px 60px;
-      background: var(--white);
-    }
-
+    /* Offerings cards */
     .offerings-section {
       max-width: 1400px;
       margin: 0 auto;
@@ -88,8 +78,8 @@
     }
 
     .offerings-title {
-      font-family: var(--font-sans);
-      font-size: clamp(30px, 4vw, 52px);
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 4vw, 52px);
       font-weight: 400;
       line-height: 1.2;
       color: var(--black);
@@ -119,6 +109,7 @@
       transform: translateY(-8px);
     }
 
+    /* Background images from Concepts.png */
     .offering-bg {
       position: absolute;
       inset: 0;
@@ -195,7 +186,6 @@
       transform: translateX(4px);
     }
 
-    /* Responsive */
     @media (max-width: 1024px) {
       .offerings-grid {
         grid-template-columns: 1fr;
@@ -209,9 +199,10 @@
     }
 
     @media (max-width: 768px) {
-      #philosophy,
-      #offerings {
-        padding: 80px 32px;
+      #approach { padding: 100px 32px 60px; }
+      
+      .philosophy-section {
+        margin-bottom: 80px;
       }
 
       .offering-card {
@@ -227,7 +218,7 @@
       <img src="images/LOGO_orma.png" alt="ORMA" class="nav-logo-img" />
     </a>
 
-    <ul class="nav-links">
+        <ul class="nav-links">
       <li><a href="about_us.html">About us</a></li>
       <li><a href="approach.html">Our Approach</a></li>
       <li><a href="works.html">Works</a></li>
@@ -235,10 +226,11 @@
     </ul>
   </nav>
 
-  <!-- PHILOSOPHY -->
   <section id="philosophy">
     <div class="philosophy-content">
-       
+      
+      <p class="section-label">Philosophy</p>
+      
       <h2 class="philosophy-title">
         A garden is not<br>
         <em>decoration.</em>
@@ -248,7 +240,9 @@
         ORMA is where nature becomes your personal universe. 
         We design living spaces that reflect who you truly are.
       </p>
-  
+      <p class="philosophy-quote reveal reveal-d3">
+        "The garden is the only art that grows."
+      </p>
       <p class="philosophy-text">
         Most garden designers start with style. We start with you. 
         We help people reclaim authorship of their lives through 
@@ -262,21 +256,22 @@
     </div>
   </section>
   
-  <!-- OFFERINGS -->
-  <section id="offerings">
+  <section id="approach">
+
+    <!-- OFFERINGS -->
     <div class="offerings-section">
-      
-      <div class="offerings-intro">
+      <div class="offerings-intro reveal">
+        <p class="offerings-label">Our Offerings</p>
         <h2 class="offerings-title">
-          One philosophy,<br>
-          two approaches.
+          Two approaches,<br>
+          one philosophy.
         </h2>
       </div>
 
       <div class="offerings-grid">
         
         <!-- INNER GARDEN -->
-        <a href="inner-garden.html" class="offering-card">
+        <a href="inner-garden.html" class="offering-card reveal">
           <div class="offering-bg">
             <img src="images/concept-inner.jpg" alt="Inner Garden" />
           </div>
@@ -297,7 +292,7 @@
         </a>
 
         <!-- OUTER SPACES -->
-        <a href="outer-spaces.html" class="offering-card">
+        <a href="outer-spaces.html" class="offering-card reveal reveal-d1">
           <div class="offering-bg">
             <img src="images/concept-outer.jpg" alt="Outer Spaces" />
           </div>
@@ -319,6 +314,7 @@
 
       </div>
     </div>
+
   </section>
 
   <footer>
@@ -327,7 +323,7 @@
       <span class="footer-text">ORMA</span>
     </div>
     <ul class="footer-links">
-      <li><a href="masha.html">Masha</a></li>
+      <li><a href="about_us.html">About us</a></li>
       <li><a href="approach.html">Our Approach</a></li>
       <li><a href="works.html">Works</a></li>
       <li><a href="contact.html">Contact</a></li>
