@@ -195,23 +195,12 @@ footer {
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
 }
 
-.footer-square {
-  width: 18px;
-  height: 18px;
-  border: 2px solid var(--white);
-  transform: rotate(45deg);
-  opacity: 0.5;
-}
-
-.footer-text {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.25em;
-  color: rgba(255,255,255,0.5);
-  text-transform: uppercase;
+.footer-logo-img {
+  height: 28px;
+  width: auto;
+  opacity: 0.6;
 }
 
 .footer-links {

@@ -127,6 +127,16 @@
     @media (max-width: 768px) {
       #contact { padding: 100px 32px 80px; }
     }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #contact {
+      flex: 1;
+    }
   </style>
 </head>
 <body>
@@ -146,7 +156,6 @@
 
   <section id="contact">
     <div class="contact-intro">
-      <p class="section-label reveal">Get in touch</p>
       <h1 class="section-title reveal reveal-d1">
         Let's <em>talk.</em>
       </h1>
@@ -160,16 +169,8 @@
       <div class="contact-info reveal">
         <h3>Our details</h3>
         <div class="info-row">
-          <span class="info-label">Email</span>
-          <span class="info-value">bonjour@orma-design.fr</span>
-        </div>
-        <div class="info-row">
-          <span class="info-label">Phone</span>
-          <span class="info-value">+33 X XX XX XX XX</span>
-        </div>
-        <div class="info-row">
           <span class="info-label">Location</span>
-          <span class="info-value">Paris, France</span>
+          <span class="info-value">Rotterdam, Netherlands</span>
         </div>
         <div class="info-row">
           <span class="info-label">Hours</span>
@@ -177,7 +178,7 @@
         </div>
         <div class="info-row">
           <span class="info-label">Instagram</span>
-          <span class="info-value">@orma.design</span>
+          <span class="info-value"><a href="https://www.instagram.com/orma_innergarden" target="_blank" rel="noopener noreferrer">@orma_innergarden</a></span>
         </div>
       </div>
 
@@ -205,17 +206,13 @@
 
         <button type="submit" class="btn btn-primary">Send message →</button>
 
-        <p class="form-note">
-          We respond within 48 hours. We work with a limited number of clients each year. If we're aligned, you'll hear from us soon.
-        </p>
       </form>
     </div>
   </section>
 
   <footer>
     <div class="footer-logo">
-      <div class="footer-square"></div>
-      <span class="footer-text">ORMA</span>
+      <img src="images/LOGO_orma.png" alt="ORMA" class="footer-logo-img" />
     </div>
     <ul class="footer-links">
       <li><a href="about.html">About</a></li>
