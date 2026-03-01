@@ -1,0 +1,2 @@
+# Large video files (exceed GitHub's 100MB limit — store locally or use LFS)
+*.mov
