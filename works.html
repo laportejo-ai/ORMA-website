@@ -108,17 +108,32 @@
   <nav id="nav">
     <a href="index.html" class="nav-logo">
       <div class="logo-square"></div>
-     <img src="images/LOGO_orma.png" alt="ORMA" class="nav-logo-img" />
-<span class="logo-text">ORMA</span>
+      <img src="images/LOGO_orma.png" alt="ORMA" class="nav-logo-img" />
     </a>
 
-        <ul class="nav-links">
+    <ul class="nav-links">
       <li><a href="about_us.html">About us</a></li>
       <li><a href="approach.html">Our Approach</a></li>
       <li><a href="works.html">Works</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
+
+  <div class="mobile-menu-overlay" id="mobileMenu">
+    <button class="mobile-menu-close" id="menuClose" aria-label="Close menu">✕</button>
+    <ul class="mobile-nav-links">
+      <li><a href="about_us.html">About us</a></li>
+      <li><a href="approach.html">Our Approach</a></li>
+      <li><a href="works.html">Works</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
 
   <section id="works">
     <div class="works-intro">
@@ -131,9 +146,9 @@
 
     <div class="works-grid">
       <!-- PROJECT 1 -->
-      <div class="work-item reveal">
+      <div class="work-item reveal" onclick="openLightbox('project1')" role="button" tabindex="0" aria-label="View Villa Horizons gallery">
         <div class="work-image">
-          <img src="images/work-1.jpg" alt="Project 1" />
+          <img src="images/garden1_cover.jpg" alt="Villa Horizons" />
         </div>
         <div class="work-info">
           <p class="work-tag">Inner Garden · 2024</p>
@@ -146,9 +161,9 @@
       </div>
 
       <!-- PROJECT 2 -->
-      <div class="work-item reveal reveal-d1">
+      <div class="work-item reveal reveal-d1" onclick="openLightbox('project2')" role="button" tabindex="0" aria-label="View Urban Retreat gallery">
         <div class="work-image">
-          <img src="images/work-2.jpg" alt="Project 2" />
+          <img src="images/garden2_cover.jpg" alt="Urban Retreat" />
         </div>
         <div class="work-info">
           <p class="work-tag">Outer Spaces · 2023</p>
@@ -161,9 +176,9 @@
       </div>
 
       <!-- PROJECT 3 -->
-      <div class="work-item reveal reveal-d2">
+      <div class="work-item reveal reveal-d2" onclick="openLightbox('project3')" role="button" tabindex="0" aria-label="View Cascading Meadow gallery">
         <div class="work-image">
-          <img src="images/work-3.jpg" alt="Project 3" />
+          <img src="images/garden3_cover.JPG" alt="Cascading Meadow" />
         </div>
         <div class="work-info">
           <p class="work-tag">Inner Garden · 2024</p>
@@ -171,6 +186,20 @@
           <p class="work-location">Bordeaux, France</p>
           <p class="work-desc">
             A layered urban garden with naturalistic planting. Perennial meadows, climbing walls, and a naturalistic pond creating an urban oasis.
+          </p>
+        </div>
+      </div>
+      <!-- PROJECT 4 -->
+      <div class="work-item reveal reveal-d3" onclick="openLightbox('project4')" role="button" tabindex="0" aria-label="View project 4 gallery">
+        <div class="work-image">
+          <img src="images/garden4_cover.jpg" alt="Garden 4" />
+        </div>
+        <div class="work-info">
+          <p class="work-tag">Inner Garden · 2025</p>
+          <h3 class="work-title">Garden 4</h3>
+          <p class="work-location"></p>
+          <p class="work-desc">
+            Description à compléter.
           </p>
         </div>
       </div>
@@ -189,6 +218,23 @@
     </ul>
     <p class="footer-copy">© 2026 ORMA. Garden Design.</p>
   </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project gallery">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery">✕</button>
+    <div class="lightbox-content">
+      <div class="lightbox-image-wrap">
+        <button class="lightbox-arrow lightbox-arrow-prev" id="lightboxPrev" aria-label="Previous image">&#8249;</button>
+        <img src="" alt="" id="lightboxImg" />
+        <button class="lightbox-arrow lightbox-arrow-next" id="lightboxNext" aria-label="Next image">&#8250;</button>
+      </div>
+      <div class="lightbox-info">
+        <p class="lightbox-counter" id="lightboxCounter">1 / 5</p>
+        <h3 class="lightbox-title" id="lightboxTitle"></h3>
+        <p class="lightbox-location" id="lightboxLocation"></p>
+      </div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 
